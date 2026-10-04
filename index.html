@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sutradhar by Urban Company — Your wedding vendors, handled</title>
+<meta name="description" content="Forward a vendor's quote. Sutradhar handles the rest — approvals, payments, deliveries. On WhatsApp. Nothing to install.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uc-purple: #4A148C;
+    --uc-purple-dark: #38006B;
+    --uc-purple-light: #F3E9FB;
+    --ink: #1A1A1A;
+    --ink-2: #5A5A5A;
+    --ink-3: #8A8A8A;
+    --line: #E8E8E8;
+    --bg: #FFFFFF;
+    --bg-2: #FAFAFA;
+    --green: #1B8A4C;
+    --amber: #F0A500;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    line-height: 1.5;
+  }
+  img { max-width: 100%; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+  }
+  .nav-in {
+    max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 9px; }
+  .brand .uc {
+    font-weight: 700; font-size: 1.02rem; color: var(--uc-purple); letter-spacing: -0.01em;
+  }
+  .brand .sep { color: var(--ink-3); font-size: 0.8rem; }
+  .brand .name { font-weight: 600; font-size: 1.02rem; letter-spacing: -0.01em; }
+  .nav-cta {
+    background: var(--uc-purple); color: #fff; text-decoration: none;
+    font-size: 0.86rem; font-weight: 600; padding: 9px 18px; border-radius: 8px;
+    white-space: nowrap; transition: background .18s ease;
+  }
+  .nav-cta:hover { background: var(--uc-purple-dark); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 64px; }
+  @media (max-width: 760px) { .hero { padding: 48px 0 44px; } }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+  }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--uc-purple-light); color: var(--uc-purple);
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.01em;
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--uc-purple); }
+
+  h1 {
+    font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 700;
+    letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 18px;
+  }
+  .sub { font-size: 1.08rem; color: var(--ink-2); max-width: 46ch; margin-bottom: 28px; }
+  .sub strong { color: var(--ink); font-weight: 600; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--uc-purple); color: #fff; border: none;
+    font-family: inherit; font-size: 0.96rem; font-weight: 600;
+    padding: 14px 28px; border-radius: 10px; cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 9px;
+    transition: background .18s ease, transform .18s ease;
+  }
+  .btn-primary:hover { background: var(--uc-purple-dark); transform: translateY(-1px); }
+  .cta-note { font-size: 0.82rem; color: var(--ink-3); }
+
+  .trust { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 30px; }
+  .trust div { font-size: 0.84rem; color: var(--ink-2); display: flex; align-items: center; gap: 7px; }
+  .trust .tick { color: var(--green); font-weight: 700; }
+
+  /* ---------- Phone ---------- */
+  .phone-wrap { display: flex; justify-content: center; }
+  .phone {
+    width: 290px; background: #111; border-radius: 34px; padding: 9px;
+    box-shadow: 0 26px 60px -28px rgba(0,0,0,0.42);
+  }
+  .screen { background: #E9E3D8; border-radius: 26px; overflow: hidden; }
+  .wa-top {
+    background: #075E54; color: #fff; padding: 12px 14px; display: flex; align-items: center; gap: 9px;
+  }
+  .wa-av {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--uc-purple);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .wa-nm { font-size: 0.88rem; font-weight: 600; line-height: 1.2; }
+  .wa-st { font-size: 0.7rem; opacity: 0.85; }
+  .wa-body { padding: 12px 10px; display: flex; flex-direction: column; gap: 7px; min-height: 330px; }
+  .bub {
+    max-width: 86%; padding: 8px 10px; border-radius: 9px;
+    font-size: 0.78rem; line-height: 1.45; color: #1F2A22;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+  }
+  .bub.in { background: #fff; align-self: flex-start; border-top-left-radius: 2px; }
+  .bub.out { background: #DCF8C6; align-self: flex-end; border-top-right-radius: 2px; }
+  .bub .t { display: block; text-align: right; font-size: 0.62rem; color: #7b8a7f; margin-top: 2px; }
+  .voice-bub { display: flex; align-items: center; gap: 8px; }
+  .play { width: 22px; height: 22px; border-radius: 50%; background: #075E54; color: #fff;
+          display: flex; align-items: center; justify-content: center; font-size: 0.6rem; flex-shrink: 0; }
+  .wave { flex: 1; height: 16px; background: repeating-linear-gradient(90deg,#8aa394 0 2px,transparent 2px 5px); opacity: .7; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 68px 0; }
+  .alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.05rem); font-weight: 700;
+    letter-spacing: -0.02em; margin-bottom: 12px;
+  }
+  .lede { color: var(--ink-2); max-width: 54ch; margin-bottom: 36px; font-size: 1rem; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .alt .step { background: #fff; }
+  .step .n {
+    width: 30px; height: 30px; border-radius: 8px; background: var(--uc-purple-light);
+    color: var(--uc-purple); font-weight: 700; font-size: 0.86rem;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 7px; }
+  .step p { font-size: 0.9rem; color: var(--ink-2); }
+
+  .feats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .feats { grid-template-columns: 1fr; } }
+  .feat { display: flex; gap: 14px; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background:#fff; }
+  .feat .ic {
+    width: 38px; height: 38px; border-radius: 10px; background: var(--uc-purple-light);
+    display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0;
+  }
+  .feat h3 { font-size: 0.97rem; font-weight: 600; margin-bottom: 5px; }
+  .feat p { font-size: 0.89rem; color: var(--ink-2); }
+
+  .guard { border-left: 3px solid var(--amber); background: #FFFBF0; padding: 20px 22px; border-radius: 0 12px 12px 0; margin-top: 26px; }
+  .guard h3 { font-size: 0.96rem; font-weight: 600; margin-bottom: 8px; }
+  .guard p { font-size: 0.9rem; color: var(--ink-2); }
+  .guard ul { margin: 10px 0 0 18px; font-size: 0.89rem; color: var(--ink-2); }
+  .guard li { margin-bottom: 4px; }
+
+  /* ---------- Vendor strip ---------- */
+  .vendor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 760px) { .vendor-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .quote { border-left: 3px solid var(--uc-purple); padding-left: 18px; }
+  .quote p { font-size: 1.02rem; font-style: italic; color: var(--ink); margin-bottom: 8px; }
+  .quote .who { font-size: 0.84rem; color: var(--ink-3); }
+
+  /* ---------- Signup ---------- */
+  .signup { background: var(--uc-purple); color: #fff; }
+  .signup h2 { color: #fff; }
+  .signup .lede { color: rgba(255,255,255,0.82); }
+  .form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 520px; }
+  .form input {
+    flex: 1; min-width: 220px; font-family: inherit; font-size: 0.95rem;
+    padding: 14px 16px; border-radius: 10px; border: none; outline: none;
+  }
+  .form button {
+    background: #fff; color: var(--uc-purple); border: none; font-family: inherit;
+    font-size: 0.95rem; font-weight: 600; padding: 14px 26px; border-radius: 10px; cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .form button:hover { transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(0,0,0,0.4); }
+  .form-note { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 14px; }
+  .ok { display: none; background: rgba(255,255,255,0.14); padding: 14px 18px; border-radius: 10px; margin-top: 16px; font-size: 0.92rem; }
+
+  footer { padding: 36px 0; border-top: 1px solid var(--line); }
+  .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--ink-3); }
+
+  .disclaimer {
+    background: #FAFAFA; border-top: 1px solid var(--line);
+    padding: 22px 0; font-size: 0.78rem; color: var(--ink-3); line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">
+      <span class="uc">Urban Company</span>
+      <span class="sep">/</span>
+      <span class="name">Sutradhar</span>
+    </div>
+    <a href="#signup" class="nav-cta">Get early access</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Now in pilot · Delhi NCR</div>
+      <h1>Your wedding vendors, handled.</h1>
+      <p class="sub">Forward a vendor's quote to Sutradhar. It gets your approval, raises the payment, books the delivery and keeps the vendor updated — <strong>on WhatsApp, with nothing to install.</strong></p>
+      <div class="cta-row">
+        <a href="#signup" class="btn-primary">Get early access →</a>
+        <span class="cta-note">Free for couples. Takes 2 minutes.</span>
+      </div>
+      <div class="trust">
+        <div><span class="tick">✓</span> No app for you or your vendors</div>
+        <div><span class="tick">✓</span> Nothing booked without your approval</div>
+        <div><span class="tick">✓</span> Works in Hindi and English</div>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="screen">
+          <div class="wa-top">
+            <div class="wa-av">S</div>
+            <div>
+              <div class="wa-nm">Sutradhar</div>
+              <div class="wa-st">online</div>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="bub out voice-bub">
+              <div class="play">▶</div><div class="wave"></div>
+              <span style="font-size:.62rem;color:#7b8a7f">0:14</span>
+            </div>
+            <div class="bub in">Your Jaipur decor vendor quoted <b>₹42,000</b>. That's inside your ₹40,000–50,000 budget.<br><br>Do you approve?<span class="t">11:24</span></div>
+            <div class="bub out">Yes, approved<span class="t">11:26</span></div>
+            <div class="bub in">Advance of ₹21,000 (50%) is ready to pay:<br><b>pay.pluralonline.com/…</b><span class="t">11:26</span></div>
+            <div class="bub out">Paid<span class="t">11:31</span></div>
+            <div class="bub in">Shipment booked, Jaipur → Saket.<br>Waybill <b>29427210000123</b>, arriving 7 Oct.<br><br>I've sent the vendor a voice note in Hindi.<span class="t">11:33</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Three steps. Then it runs.</h2>
+    <p class="lede">Most of planning isn't hard — there's just too much of it to hold in your head at once.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Answer six questions</h3>
+        <p>Date, city, venue, guest count, budget, and who approves spending. Once. That's the whole setup.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Forward vendor quotes</h3>
+        <p>Text, photo or voice note — in any language. Sutradhar reads it and tells you what it says.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Approve. It does the rest.</h3>
+        <p>Payments raised, deliveries booked, vendors updated. You see everything in one running ledger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it actually does</h2>
+    <p class="lede">Not inspiration boards or vendor listings. The administrative work that nobody wants.</p>
+    <div class="feats">
+      <div class="feat">
+        <div class="ic">🎙</div>
+        <div>
+          <h3>Understands voice notes</h3>
+          <p>Your decorator sends a Hindi voice note quoting "बयालीस हज़ार रुपये". Sutradhar reads it as ₹42,000 and checks it against your budget.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="ic">₹</div>
+        <div>
+          <h3>Raises staged payments</h3>
+          <p>Advance now, balance on delivery. Secure payment links, and a ledger of who's been paid what.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="ic">📦</div>
+        <div>
+          <h3>Books and tracks deliveries</h3>
+          <p>Props from Jaipur, flowers from Pune. Serviceability checked before anything is booked.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="ic">💬</div>
+        <div>
+          <h3>Talks to vendors for you</h3>
+          <p>In their language, on WhatsApp, by text or voice note. They don't sign up for anything.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guard">
+      <h3>What it will never do without asking you</h3>
+      <p>It handles your money, so the limits are strict and built in:</p>
+      <ul>
+        <li>Never confirms a price with a vendor — you approve every amount first</li>
+        <li>Never raises a payment for an amount you haven't approved</li>
+        <li>Never books a delivery without checking both pincodes are serviceable</li>
+        <li>Never messages your guests — invitations stay yours</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap vendor-grid">
+    <div>
+      <h2>Vendors, you're covered too</h2>
+      <p class="lede" style="margin-bottom:20px">No app, no listing fee, no sign-up. Keep working on WhatsApp exactly as you do now — and stop chasing clients for payment. Sutradhar sends the reminders so you don't have to.</p>
+      <a href="#signup" class="btn-primary">List your business →</a>
+    </div>
+    <div class="quote">
+      <p>"Following up for payment — calling the client again and again — that's the thing I'd automate first. It's the most stressful part."</p>
+      <div class="who">Decor &amp; catering vendor, Delhi · from our research interviews</div>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="signup">
+  <div class="wrap">
+    <h2>Getting married? Start with one quote.</h2>
+    <p class="lede">We're piloting with a small number of weddings in Delhi NCR this season. Free for couples.</p>
+    <div class="form">
+      <input type="tel" id="phone" placeholder="Your WhatsApp number" aria-label="WhatsApp number">
+      <button id="go">Get early access</button>
+    </div>
+    <div class="ok" id="ok">Thanks — we'll message you on WhatsApp within a day. Nothing to install in the meantime.</div>
+    <p class="form-note">We'll only message you about Sutradhar. Your vendors' and guests' details are never shared with anyone.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>Sutradhar — an Urban Company pilot</div>
+    <div>Delhi NCR · 2026</div>
+  </div>
+</footer>
+
+<div class="disclaimer">
+  <div class="wrap">
+    Concept landing page created for The Ken's Case Competition 2026. Sutradhar is a prototype agent built by our team; it is not a product of Urban Company, and Urban Company has no involvement in or association with this submission. Urban Company is named as the company we argue is best placed to build this. Pine Labs, Delhivery and Gnani are named as the rails the prototype integrates with.
+  </div>
+</div>
+
+<script>
+  document.getElementById('go').addEventListener('click', function () {
+    var p = document.getElementById('phone').value.trim();
+    if (p.length < 6) { document.getElementById('phone').focus(); return; }
+    document.getElementById('ok').style.display = 'block';
+    document.getElementById('phone').value = '';
+  });
+  document.getElementById('phone').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('go').click();
+  });
+</script>
+
+</body>
+</html>
